@@ -1,0 +1,9 @@
+package edu.hrbeu.core.dao.meta.type;
+
+public enum DB
+{
+  ORACLE,
+  MYSQL,
+  SQLSERVER,
+  POSTGRESQL;
+}
