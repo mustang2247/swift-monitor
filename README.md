@@ -17,6 +17,6 @@ swift-monitor
   -----------
 
   Run : <br />
-  1.在Mysql 5中运行swift-monitor/conf/swift-monitor.sql文件
+  1.在Mysql 5中运行swift-monitor/conf/swift-monitor.sql文件<br />
   2.将swift-monitor/target/swift-monitor.war复制到Tomcat 7下
   
