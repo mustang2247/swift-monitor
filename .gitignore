@@ -3,6 +3,5 @@
 .classpath
 .settings/
 target/
-webapp/WEB-INF/classes
-
+/webapp/WEB-INF/classes
 /bin
