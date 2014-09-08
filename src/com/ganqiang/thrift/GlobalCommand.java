@@ -9,10 +9,7 @@ package com.ganqiang.thrift;
 
 import java.util.Map;
 import java.util.HashMap;
-
 import org.apache.thrift.TEnum;
-
-import com.ganqiang.thrift.GlobalCommand;
 
 public enum GlobalCommand implements org.apache.thrift.TEnum {
   STOP(0),

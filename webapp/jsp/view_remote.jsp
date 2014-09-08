@@ -122,6 +122,30 @@
 				   <td height=50>${remotep.dbpoolsize}</td>
 				</tr> 
 				<tr>
+				   <td height=50>爬虫Hbase Master地址</td>
+				   <td height=50>${remotep.hbaseMaster}</td>
+				</tr> 
+				<tr>
+				   <td height=50>爬虫Hbase Zookeeper Quorum地址</td>
+				   <td height=50>${remotep.zkQuorum}</td>
+				</tr> 
+				<tr>
+				   <td height=50>爬虫Hbase客户端端口</td>
+				   <td height=50>${remotep.zkClientPort}</td>
+				</tr> 
+				<tr>
+				   <td height=50>爬虫集群Zookeeper地址</td>
+				   <td height=50>${remotep.address}</td>
+				</tr> 
+				<tr>
+				   <td height=50>爬虫集群Zookeeper序列ID</td>
+				   <td height=50>${remotep.seqId}</td>
+				</tr> 
+				<tr>
+				   <td height=50>爬虫集群节点总数</td>
+				   <td height=50>${remotep.totalNodes}</td>
+				</tr> 
+				<tr>
 				   <td ><input type="button" value="关闭"  onclick="window.close();"></td>
 				</tr> 
 			</table>

@@ -9,10 +9,7 @@ package com.ganqiang.thrift;
 
 import java.util.Map;
 import java.util.HashMap;
-
 import org.apache.thrift.TEnum;
-
-import com.ganqiang.thrift.JobCommand;
 
 public enum JobCommand implements org.apache.thrift.TEnum {
   PAUSE(0),

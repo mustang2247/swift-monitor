@@ -77,7 +77,7 @@
     
     				document.addform.action="list?method=addseeds";
     				document.addform.submit();
-    				window.returnValue="true";
+    				window.opener.location.href="list?method=query";
     				window.close();
     }
 </script>

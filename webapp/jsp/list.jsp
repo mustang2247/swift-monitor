@@ -89,57 +89,32 @@ Highcharts.setOptions(Highcharts.theme);
     
     
 function addnodes(){
-		var returnValue = window.showModalDialog("list?method=preaddnodes","","dialogWidth=500px;dialogHeight=350px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+		window.open("list?method=preaddnodes",'newwindow','height=350,width=500,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 
 function addseeds(){
-		var returnValue = window.showModalDialog("list?method=preaddseeds","","dialogWidth=500px;dialogHeight=350px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+		window.open("list?method=preaddseeds",'newwindow','height=350,width=500,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 
 function addproxys(){
-		var returnValue = window.showModalDialog("list?method=preaddproxys","","dialogWidth=500px;dialogHeight=350px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+	window.open("list?method=preaddproxys",'newwindow','height=350,width=500,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 
 function addconf(){
-		var returnValue = window.showModalDialog("list?method=preaddconf","","dialogWidth=800px;dialogHeight=550px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+	 window.open("list?method=preaddconf",'newwindow','height=550,width=800,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
-
 
 function editnodes(id){
-		var returnValue = window.showModalDialog("list?method=preeditnodes&id="+id,"","dialogWidth=500px;dialogHeight=350px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+		window.open("list?method=preeditnodes&id="+id,'newwindow','height=350,width=500,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 function editseeds(id){
-		var returnValue = window.showModalDialog("list?method=preeditseeds&id="+id,"","dialogWidth=500px;dialogHeight=350px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+		 window.open("list?method=preeditseeds&id="+id,'newwindow','height=350,width=500,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 function editproxys(id){
-		var returnValue = window.showModalDialog("list?method=preeditproxys&id="+id,"","dialogWidth=500px;dialogHeight=350px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+		 window.open("list?method=preeditproxys&id="+id,'newwindow','height=350,width=500,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 function editconf(id){
-		var returnValue = window.showModalDialog("list?method=preeditconf&id="+id,"","dialogWidth=800px;dialogHeight=550px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+		window.open("list?method=preeditconf&id="+id,'newwindow','height=550,width=800,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 
 function delnodes(id,name) {   
@@ -175,11 +150,8 @@ function delconf(id,name) {
 		}   
 }  
 
-function view(id){
-		var returnValue = window.showModalDialog("list?method=viewremote&id="+id,"","dialogWidth=800px;dialogHeight=550px;help=no;center=yes;");
-		if(returnValue == "true"){
-       location.href="list?method=query";
-        }
+function viewremote(id){
+		window.open('list?method=viewremote&id='+id,'newwindow','height=550,width=800,top='+(screen.height-500)/2+',left='+(screen.width-800)/2+',toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no');
 }
 
 function pingserver(id){
@@ -498,7 +470,7 @@ $(function () {
 		    				<td><c:if test="${conf.IS_CASCADE==1}">是</c:if><c:if test="${conf.IS_CASCADE==0}">否</c:if></td>
 		    				<td>${conf.OUT_DEPTH}</td-->
 		    				<td><c:if test="${conf.DEP_STATUS==0}"><a href="#" onclick="send('${conf.ID}','allot')">部署</a></c:if><c:if test="${conf.DEP_STATUS==1}">已部署</c:if> |  <a href="#" onclick="send('${conf.ID}','pause')">暂停</a> | <a href="#" onclick="send('${conf.ID}','continue')">继续</a> |  <a href="#" onclick="send('${conf.ID}','cancel')">取消</a></td>
-		    				<td><a href="#" onclick="view('${conf.ID}')">查看全局配置</a>  <!--|  <a href="#" onclick="sendglobalcommand('restart','${conf.ID}')">远程重启</a>  |  <a href="#" onclick="sendglobalcommand('stop','${conf.ID}')">远程停掉</a--></td>
+		    				<td><a href="#" onclick="viewremote('${conf.ID}')">查看全局配置</a>  <!--|  <a href="#" onclick="sendglobalcommand('restart','${conf.ID}')">远程重启</a>  |  <a href="#" onclick="sendglobalcommand('stop','${conf.ID}')">远程停掉</a--></td>
 		    				<td> <a href="#" onclick="editconf('${conf.ID}')">修改</a> | <a href="#" onclick="delconf('${conf.ID}','${conf.NODE_IP}')">删除</a> </td>  
 						</tr> 
 					</c:forEach>

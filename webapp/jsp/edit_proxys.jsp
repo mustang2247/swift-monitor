@@ -76,7 +76,7 @@
               }
     				document.addform.action="list?method=editproxys";
     				document.addform.submit();
-    				window.returnValue="true";
+    				window.opener.location.href="list?method=query";
     				window.close();
     }
 </script>

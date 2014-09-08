@@ -61,6 +61,12 @@ public final class RemoteService{
 		            map.put("dbuser", gc.getDbUsername());
 		            map.put("dbpwd", gc.getDbPassword());
 		            map.put("dbpoolsize", gc.getDbPoolSize());
+		            map.put("address", gc.getAddress());
+		            map.put("seqId", gc.getSeqId());
+		            map.put("totalNodes", gc.getTotalNodes());
+		            map.put("hbaseMaster", gc.getHbaseMaster());
+		            map.put("zkQuorum", gc.getZkQuorum());
+		            map.put("zkClientPort", gc.getZkClientPort());
 		            map.put("disksync", gc.getSyncDomain());
 		        } catch (Exception e) {
 		        	e.printStackTrace();
@@ -90,7 +96,7 @@ public final class RemoteService{
 	        return map;
 	}
 		
-		public static void sendjob(String id, String opt, String ip,int port) {
+    public static void sendjob(String id, String opt, String ip,int port) {
 						int clientTimeout = 30000;  
 						TTransport transport = new TFramedTransport(new TSocket(ip, port,  clientTimeout));  
 		        TProtocol protocol = new TCompactProtocol(transport);  
@@ -106,7 +112,7 @@ public final class RemoteService{
 		            		List<Map> list = dao.find("select * from http_proxys where id in ('"+proxys+"')");
 		            		List<String> proxylist = new ArrayList<String>();;
 		            		for(Map map : list){
-		            		    proxylist.add(map.get("IP").toString());
+		            		    proxylist.add(map.get("IP").toString() + ":" + map.get("PORT"));
 		            							 }
 		            		Object inseed = conf.get("IN_SEED_IDS");
 		            		if(inseed != null && !inseed.equals("")){

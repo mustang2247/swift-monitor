@@ -73,7 +73,7 @@
 
     				document.addform.action="list?method=editconf";
     				document.addform.submit();
-    				window.returnValue="true";
+    				window.opener.location.href="list?method=query";
     				window.close();
     }
 </script>
